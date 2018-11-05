@@ -1,0 +1,12 @@
+.box {
+  height: 35px;
+  width:100px;
+  position: absolute;
+  background: red;
+}
+#box1 {
+  height: 35px;
+  width:100px;
+  position: absolute;
+  background: green;
+}

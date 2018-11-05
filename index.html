@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+  <title>Exercice 1</title>
+</head>
+<body>
+  <form name="myForm">
+    <!-- Utilisation de l'attribut required pour spécifier que le champs de saisie
+    doit être remplit. On précisera le type email pour spécifier
+    que ce qui est saisi est une adresse mail.-->
+    <input type="email" name="email" ng-model="email" required>
+    <!-- Utilisation de la directive ng-show à laquelle on ajoute une marche
+    à suivre en cas de saisie incorrecte grâce aux services .$invalid, $error.email
+    et $error.required.
+    Dans cet exercice, le rectangle rouge de base reste rouge en cas d'erreur de saisie-->
+    <span ng-show="myForm.email.$invalid">
+      <span class="box" ng-show="myForm.email.$error.email"></span>
+      <span class="box" ng-show="myForm.email.$error.required"></span>
+    </span>
+    <!-- Nouvelle utilisation de la directive ng-show à laquelle on ajoute cette fois
+    le service .$valid qui déclenchera la marche à suivre en cas de saisie correcte.
+    Ici, le rectangle de base rouge deviendra vert.-->
+    <span ng-show="myForm.email.$valid">
+      <span id="box1"></span>
+    </span>
+  </form>
+</body>
+</html>
